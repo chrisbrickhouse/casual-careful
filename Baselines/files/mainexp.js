@@ -43,7 +43,9 @@ function setSliders(arr) {
 
 function setAudio(arr) {
     for (i = 1; i <= arr.length; i++) {
-        document.getElementById("audio"+i).src = "http://stanford.edu/~ctb77/studies/files/sounds/"+arr[i-1]
+        fpath = "http://stanford.edu/~ctb77/studies/files/sounds/"+arr[i-1]
+        console.log(fpath)
+        document.getElementById("audio"+i).src = fpath
     }
 }
 
@@ -66,355 +68,34 @@ function playAudio() {
 }
 
 function get_wordlist(cond,list) { // Still needs mixed condition added
-    var wl;
+    var wl = [];
     console.log(cond,list)
-    if (cond == 'k_cas_del' && list == 0) {
-        wl = [
-            'kcasual1_rental.wav',
-            'kcasual2_tainted.wav',
-            'kcasual1_gentle.wav',
-            'kcasual2_hinted.wav',
-            'kcasual2_ranted.wav',
-            'kcasual2_haunted.wav',
-            'kcasual2_twenty.wav',
-            'kcasual1_frontal.wav',
-        ]
-    } else if (cond == 'k_cas_del' && list == 1) {
-        wl = [
-            'kcasual2_center.wav',
-            'kcasual1_plenty.wav',
-            'kcasual2_county.wav',
-            'kcasual2_enter.wav',
-            'kcasual1_dentist.wav',
-            'kcasual2_bounty.wav',
-            'kcasual1_granted.wav',
-            'kcasual2_dented.wav',
-        ]
-    } else if (cond == 'k_cas_flap' && list == 0) {
-        wl = [
-            'kcasual2_butter.wav',
-            'kcasual2_chatting.wav',
-            'kcasual1_beetle.wav',
-            'kcasual1_pretty.wav',
-            'kcasual1_cater.wav',
-            'kcasual2_party.wav',
-            'kcasual2_batter.wav',
-            'kcasual2_shutter.wav',
-        ]
-    } else if (cond =='k_cas_flap' && list == 1) {
-        wl = [
-            'kcasual2_cattle.wav',
-            'kcasual2_kitty.wav',
-            'kcasual2_lettuce.wav',
-            'kcasual1_water.wav',
-            'kcasual1_city.wav',
-            'kcasual1_photo.wav',
-            'kcasual2_pity.wav',
-            'kcasual2_rating.wav',
-        ]
-    } else if (cond == 'k_cas_schwa' && list == 0) {
-        wl = [
-            'kcasual1_canoe.wav',
-            'kcasual1_bereave.wav',
-            'kcasual1_pollute.wav',
-            'kcasual1_polite.wav',
-            'kcasual1_correct.wav',
-            'kcasual1_career.wav',
-            'kcasual2_collide.wav',
-            'kcasual2_delight.wav',
-        ]
-    } else if (cond == 'k_cas_schwa' && list == 1) {
-        wl = [
-            'kcasual2_select.wav',
-            'kcasual2_saloon.wav',
-            'kcasual1_parade.wav',
-            'kcasual1_delay.wav',
-            'kcasual1_police.wav',
-            'kcasual1_collapse.wav',
-            'kcasual2_balloon.wav',
-            'kcasual1_believe.wav',
-        ]
-    } else if (cond == 'k_cas_min' && list == 0) { // Only has 7 not 8 items
-        wl = [
-            'kcasual1_fluffy.wav',
-            'kcasual2_power.wav',
-            'kcasual2_silence.wav',
-            'kcasual2_storage.wav',
-            'kcasual2_tiger.wav',
-            'kcasual1_temper.wav',
-            'kcasual2_label.wav',
-        ]
-    } else if (cond = 'k_cas_min' && list == 1) { // Only has 7 not 8 items
-        wl = [
-            'kcasual2_sugar.wav',
-            'kcasual1_greasy.wav',
-            'kcasual2_crispy.wav',
-            'kcasual1_travel.wav',
-            'kcasual2_cupcake.wav',
-            'kcasual2_Tuesday.wav',
-            'kcasual2_clearly.wav',
-        ]
-    } else if (cond == 'k_car_del' && list == 0) {
-        wl = [
-            'sk_rental.wav',
-            'sk_tainted.wav',
-            'sk_gentle.wav',
-            'sk_hinted.wav',
-            'sk_ranted.wav',
-            'sk_haunted.wav',
-            'sk_twenty.wav',
-            'sk_frontal.wav',
-        ]
-    } else if (cond == 'k_car_del' && list == 1) {
-        wl = [
-            'sk_center.wav',
-            'sk_plenty.wav',
-            'sk_county.wav',
-            'sk_enter.wav',
-            'sk_dentist.wav',
-            'sk_bounty.wav',
-            'sk_granted.wav',
-            'sk_dented.wav',
-        ]
-    } else if (cond == 'k_car_flap' && list == 0) {
-        wl = [
-            'sk_butter.wav',
-            'sk_chatting.wav',
-            'sk_beetle.wav',
-            'sk_pretty.wav',
-            'sk_cater.wav',
-            'sk_party.wav',
-            'sk_batter.wav',
-            'sk_shutter.wav',
-        ]
-    } else if (cond =='k_car_flap' && list == 1) {
-        wl = [
-            'sk_cattle.wav',
-            'sk_kitty.wav',
-            'sk_lettuce.wav',
-            'sk_water.wav',
-            'sk_city.wav',
-            'sk_photo.wav',
-            'sk_pity.wav',
-            'sk_rating.wav',
-        ]
-    } else if (cond == 'k_car_schwa' && list == 0) {
-        wl = [
-            'sk_canoe.wav',
-            'sk_bereave.wav',
-            'sk_pollute.wav',
-            'sk_polite.wav',
-            'sk_correct.wav',
-            'sk_career.wav',
-            'sk_collide.wav',
-            'sk_delight.wav',
-        ]
-    } else if (cond == 'k_car_schwa' && list == 1) {
-        wl = [
-            'sk_select.wav',
-            'sk_saloon.wav',
-            'sk_parade.wav',
-            'sk_delay.wav',
-            'sk_police.wav',
-            'sk_collapse.wav',
-            'sk_balloon.wav',
-            'sk_believe.wav',
-        ]
-    } else if (cond == 'k_car_min' && list == 0) { // Only has 7 not 8 items
-        wl = [
-            'sk_fluffy.wav',
-            'sk_power.wav',
-            'sk_silence.wav',
-            'sk_storage.wav',
-            'sk_tiger.wav',
-            'sk_temper.wav',
-            'sk_label.wav',
-        ]
-    } else if (cond = 'k_car_min' && list == 1) { // Only has 7 not 8 items
-        wl = [
-            'sk_sugar.wav',
-            'sk_greasy.wav',
-            'sk_crispy.wav',
-            'sk_travel.wav',
-            'sk_cupcake.wav',
-            'sk_Tuesday.wav',
-            'sk_clearly.wav',
-        ]
-    } else if (cond == 's_cas_del' && list == 1) {
-        wl = [
-            'scasual2_rental.wav',
-            'scasual2_tainted.wav',
-            'scasual2_gentle.wav',
-            'scasual1_hinted.wav',
-            'scasual1_ranted.wav',
-            'scasual2_haunted.wav',
-            'scasual2_twenty.wav',
-            'scasual2_frontal.wav',
-        ]
-    } else if (cond == 's_cas_del' && list == 0) {
-        wl = [
-            'scasual1_center.wav',
-            'scasual2_plenty.wav',
-            'scasual2_county.wav',
-            'scasual1_enter.wav',
-            'scasual1_dentist.wav',
-            'scasual2_bounty.wav',
-            'scasual2_granted.wav',
-            'scasual2_dented.wav',
-        ]
-    } else if (cond == 's_cas_flap' && list == 1) {
-        wl = [
-            'scasual1_butter.wav',
-            'scasual1_chatting.wav',
-            'scasual1_beetle.wav',
-            'scasual1_pretty.wav',
-            'scasual1_cater.wav',
-            'scasual1_party.wav',
-            'scasual1_batter.wav',
-            'scasual1_shutter.wav',
-        ]
-    } else if (cond =='s_cas_flap' && list == 0) {
-        wl = [
-            'scasual2_cattle.wav',
-            'scasual1_kitty.wav',
-            'scasual1_lettuce.wav',
-            'scasual1_water.wav',
-            'scasual2_city.wav',
-            'scasual2_photo.wav',
-            'scasual2_pity.wav',
-            'scasual1_rating.wav',
-        ]
-    } else if (cond == 's_cas_schwa' && list == 1) {
-        wl = [
-            'scasual2_canoe.wav',
-            'scasual1_bereave.wav',
-            'scasual2_pollute.wav',
-            'scasual2_polite.wav',
-            'scasual1_correct.wav',
-            'scasual2_career.wav',
-            'scasual2_collide.wav',
-            'scasual1_delight.wav',
-        ]
-    } else if (cond == 's_cas_schwa' && list == 0) {
-        wl = [
-            'scasual2_select.wav',
-            'scasual2_saloon.wav',
-            'scasual2_parade.wav',
-            'scasual2_delay.wav',
-            'scasual2_police.wav',
-            'scasual2_collapse.wav',
-            'scasual1_balloon.wav',
-            'scasual1_believe.wav',
-        ]
-    } else if (cond == 's_cas_min' && list == 1) { // Only has 7 not 8 items
-        wl = [
-            'scasual2_fluffy.wav',
-            'scasual1_power.wav',
-            'scasual1_silence.wav',
-            'scasual2_storage.wav',
-            'scasual1_tiger.wav',
-            'scasual1_temper.wav',
-            'scasual1_label.wav',
-        ]
-    } else if (cond = 's_cas_min' && list == 0) { // Only has 7 not 8 items
-        wl = [
-            'scasual1_sugar.wav',
-            'scasual1_greasy.wav',
-            'scasual2_crispy.wav',
-            'scasual1_travel.wav',
-            'scasual2_cupcake.wav',
-            'scasual1_Tuesday.wav',
-            'scasual2_clearly.wav',
-        ]
-    } else if (cond == 's_car_del' && list == 1) {
-        wl = [
-            'ss_rental.wav',
-            'ss_tainted.wav',
-            'ss_gentle.wav',
-            'ss_hinted.wav',
-            'ss_ranted.wav',
-            'ss_haunted.wav',
-            'ss_twenty.wav',
-            'ss_frontal.wav',
-        ]
-    } else if (cond == 's_car_del' && list == 0) {
-        wl = [
-            'ss_center.wav',
-            'ss_plenty.wav',
-            'ss_county.wav',
-            'ss_enter.wav',
-            'ss_dentist.wav',
-            'ss_bounty.wav',
-            'ss_granted.wav',
-            'ss_dented.wav',
-        ]
-    } else if (cond == 's_car_flap' && list == 1) {
-        wl = [
-            'ss_butter.wav',
-            'ss_chatting.wav',
-            'ss_beetle.wav',
-            'ss_pretty.wav',
-            'ss_cater.wav',
-            'ss_party.wav',
-            'ss_batter.wav',
-            'ss_shutter.wav',
-        ]
-    } else if (cond =='s_car_flap' && list == 0) {
-        wl = [
-            'ss_cattle.wav',
-            'ss_kitty.wav',
-            'ss_lettuce.wav',
-            'ss_water.wav',
-            'ss_city.wav',
-            'ss_photo.wav',
-            'ss_pity.wav',
-            'ss_rating.wav',
-        ]
-    } else if (cond == 's_car_schwa' && list == 1) {
-        wl = [
-            'ss_canoe.wav',
-            'ss_bereave.wav',
-            'ss_pollute.wav',
-            'ss_polite.wav',
-            'ss_correct.wav',
-            'ss_career.wav',
-            'ss_collide.wav',
-            'ss_delight.wav',
-        ]
-    } else if (cond == 's_car_schwa' && list == 0) {
-        wl = [
-            'ss_select.wav',
-            'ss_saloon.wav',
-            'ss_parade.wav',
-            'ss_delay.wav',
-            'ss_police.wav',
-            'ss_collapse.wav',
-            'ss_balloon.wav',
-            'ss_believe.wav',
-        ]
-    } else if (cond == 's_car_min' && list == 1) { // Only has 7 not 8 items
-        wl = [
-            'ss_fluffy.wav',
-            'ss_power.wav',
-            'ss_silence.wav',
-            'ss_storage.wav',
-            'ss_tiger.wav',
-            'ss_temper.wav',
-            'ss_label.wav',
-        ]
-    } else if (cond = 's_car_min' && list == 0) { // Only has 7 not 8 items
-        wl = [
-            'ss_sugar.wav',
-            'ss_greasy.wav',
-            'ss_crispy.wav',
-            'ss_travel.wav',
-            'ss_cupcake.wav',
-            'ss_Tuesday.wav',
-            'ss_clearly.wav',
-        ]
+    var parts = cond.split("_");
+    var file_prefix = parts[0]+"-"+parts[1]+"-";
+    var list_num
+    if (parts[0] == 's') {
+      if (list == 0) {
+        list_num = 1
+      } else {
+        list_num = 0
+      }
+    } else {
+      list_num = list
+    }
+    if (parts[2] == 'del') {
+      var words = del_lists[list_num]
+    } else if (parts[2] == 'flap') {
+      var words = flap_lists[list_num]
+    } else if (parts[2] == 'schwa') {
+      var words = schwa_lists[list_num]
+    } else if (parts[2] == 'min') {
+      var words = min_lists[list_num]
+    }
+    for (var i = 0; i < words.length; i++) {
+      wl.push(file_prefix+words[i]+'.wav')
     }
     console.log(wl)
-    setAudio(wl)
+    return(wl);
 }
 
 function get_slider_data() {
@@ -517,8 +198,8 @@ var min_lists = [
   [
     'object',
     'fluffy',
+    'spoiler',
     'morale',
-    'power',
     'silence',
     'storage',
     'temper',
@@ -564,14 +245,14 @@ var mix_lists = [
 var k_lists = Math.floor(Math.random()*2)
 
 var c_order = shuffle(conditions)
-var m_order = shuffle([
-    'k_cas_mix',
-    'k_car_mix',
-    's_cas_mix',
-    's_car_mix'
-])
+//var m_order = shuffle([
+//    'k_cas_mix',
+//    'k_car_mix',
+//    's_cas_mix',
+//    's_car_mix'
+//])
 // mixed condition trials always last
-var trialOrder = c_order.concat(m_order)
+var trialOrder = c_order
 
 var sliderOrder = [
   'educated',
@@ -595,6 +276,7 @@ setSliders(sliderOrder)//set randomizes order once, may be worth doing it for ea
 var data = {};
 var trialnum = 0;
 var TOTAL_TRIALS = trialOrder.length
+// Change above to 0 if only one trial shown to participant at random
 
 data.trialOrder = trialOrder.slice() //Makes a copy rather than ref
 data.sliderOrder = sliderOrder
@@ -620,8 +302,9 @@ $(document).ready(function() {
         if (nat == true && spe == true) {
         document.body.scrollTop = document.documentElement.scrollTop = 0;
         var trial = trialOrder.shift();
-        console.log(trial,k_lists)
-        get_wordlist(trial,k_lists);
+        var wl = get_wordlist(trial,k_lists);
+        setAudio(wl);
+        console.log(trial,wl)
         showSlide("sliderPage");
         }
         else {
@@ -660,7 +343,8 @@ $(document).ready(function() {
       refreshSlider();
       var trial = trialOrder.shift();
       console.log(trial,k_lists)
-      get_wordlist(trial,k_lists);
+      var wl = get_wordlist(trial,k_lists);
+      setAudio(wl)
     })
 
     $('#lgsubmit').click(function(){
