@@ -168,7 +168,7 @@ label {
 <br><br>
 <p class="block-text">In this experiment, you will be listening to 1 sound file.<br />You will first be asked to listen to the audio and answer a short question.<br />
     <br />
-    You will then be asked to describe and rate the audio on a number of dimensions.<br />
+    You will then be asked to rate the audio on a number of dimensions.<br />
     <br />
     You may play the audio as many times as you like to help in this.
 </p>
@@ -238,7 +238,6 @@ label {
 </div>
 
 
-<!-- Q1: Description of speaker -->
 <div class="slide" id="sliderPage" style="display: none; border: none;">
     <div>
 
@@ -256,20 +255,17 @@ label {
 <button type="button" id="playaudio" onclick="playAudio();">Play audio</button>
 
 
-<p class="questionSent">Q1: How would you describe this speaker?</p>
-
-<textarea id="speakerPerception" width="400px"></textarea>
-<br>
-
+<!-- Q1 got the axe, the rest keep the old numbering for the javascript -->
+<textarea id="speakerPerception" width="400px" style="display: none;"></textarea>
 
 
 <!-- Q2: Speaker certainty about p -->
 <form id="responseForm2">
 
-<p class="block-text" style="/*font-size: 80%;*/ font-weight: bold;"> For Q2-Q5, please drag or click the sliders to the left or right to reflect the ratings you have in mind (numbers will appear once you drag).
+<p class="block-text" style="/*font-size: 80%;*/ font-weight: bold;"> For Q1-Q12, please drag or click the sliders to the left or right to reflect the ratings you have in mind (numbers will appear once you drag).
 </p>
 
-<p class="questionSent">Q2: <span id="Q2"></span>
+<p class="questionSent">Q1: <span id="Q2"></span>
 
   <input type="hidden" class="slidervals" name="sliderval2" id="sliderval2" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
@@ -294,7 +290,7 @@ label {
 <!-- Q3: speaker inference on addressee certainty about p -->
 <form id="responseForm3">
 
-<p class="questionSent">Q3: <span id="Q3"></span>
+<p class="questionSent">Q2: <span id="Q3"></span>
 
   <input type="hidden" class="slidervals" name="sliderval3" id="sliderval3" readonly="" style="border: 0; color: #f6931f; font-weight: bold;" value="50">
 </p>
@@ -320,7 +316,7 @@ label {
 <!-- Q4: speaker authority -->
 <form id="responseForm4">
 
-<p class="questionSent">Q4: <span id="Q4"></span>
+<p class="questionSent">Q3: <span id="Q4"></span>
 
   <input type="hidden" class="slidervals" name="sliderval4" id="sliderval4" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
@@ -344,7 +340,7 @@ label {
 <!-- Q5: speaker politeness -->
 <form id="responseForm5">
 
-<p class="questionSent">Q5: <span id="Q5"></span>
+<p class="questionSent">Q4: <span id="Q5"></span>
 
   <input type="hidden" class="slidervals" name="sliderval5" id="sliderval5" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
@@ -369,7 +365,7 @@ label {
 <!-- Q6: speaker authority -->
 <form id="responseForm4">
 
-<p class="questionSent">Q6: <span id="Q6"></span>
+<p class="questionSent">Q5: <span id="Q6"></span>
 
   <input type="hidden" class="slidervals" name="sliderval6" id="sliderval6" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
@@ -392,7 +388,7 @@ label {
 <!-- Q7: speaker authority -->
 <form id="responseForm4">
 
-<p class="questionSent">Q7: <span id="Q7"></span>
+<p class="questionSent">Q6: <span id="Q7"></span>
 
   <input type="hidden" class="slidervals" name="sliderval7" id="sliderval7" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
@@ -415,7 +411,7 @@ label {
 <!-- Q8: speaker authority -->
 <form id="responseForm4">
 
-<p class="questionSent">Q8: <span id="Q8"></span>
+<p class="questionSent">Q7: <span id="Q8"></span>
 
   <input type="hidden" class="slidervals" name="sliderval8" id="sliderval8" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
@@ -438,7 +434,7 @@ label {
 <!-- Q9: speaker authority -->
 <form id="responseForm4">
 
-<p class="questionSent">Q9: <span id="Q9"></span>
+<p class="questionSent">Q8: <span id="Q9"></span>
 
   <input type="hidden" class="slidervals" name="sliderval9" id="sliderval9" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
@@ -461,7 +457,7 @@ label {
 <!-- Q10: speaker authority -->
 <form id="responseForm4">
 
-<p class="questionSent">Q10: <span id="Q10"></span>
+<p class="questionSent">Q9: <span id="Q10"></span>
 
   <input type="hidden" class="slidervals" name="sliderval10" id="sliderval10" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
@@ -484,7 +480,7 @@ label {
 <!-- Q11: speaker authority -->
 <form id="responseForm4">
 
-<p class="questionSent">Q11: <span id="Q11"></span>
+<p class="questionSent">Q10: <span id="Q11"></span>
 
   <input type="hidden" class="slidervals" name="sliderval11" id="sliderval11" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
@@ -507,7 +503,7 @@ label {
 <!-- Q12: speaker authority -->
 <form id="responseForm4">
 
-<p class="questionSent">Q12: <span id="Q12"></span>
+<p class="questionSent">Q11: <span id="Q12"></span>
 
   <input type="hidden" class="slidervals" name="sliderval12" id="sliderval12" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
@@ -530,7 +526,7 @@ label {
 <!-- Q13: speaker authority -->
 <form id="responseForm4">
 
-<p class="questionSent">Q13: <span id="Q13"></span>
+<p class="questionSent">Q12: <span id="Q13"></span>
 
   <input type="hidden" class="slidervals" name="sliderval13" id="sliderval13" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
 </p>
