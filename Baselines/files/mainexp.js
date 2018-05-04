@@ -388,7 +388,7 @@ $( function() {
             $(ui.handle).text("?");
         }
         else {
-            $(ui.handle).text(m_val);
+            $(ui.handle).text("");
         }
         $( "#sliderval2" ).val( ui.value );
       }
@@ -416,7 +416,7 @@ $( function() {
             $(ui.handle).text("?");
         }
         else {
-            $(ui.handle).text(m_val);
+            $(ui.handle).text("");
         }
         $( "#sliderval3" ).val( ui.value );
       }
@@ -444,9 +444,9 @@ $( function() {
             $(ui.handle).text("?");
         }
         else {
-            $(ui.handle).text(m_val);
+            $(ui.handle).text("");
         }
-        //$(ui.handle).text(m_val);
+        //$(ui.handle).text("");
         $( "#sliderval4" ).val( ui.value );
       }
     });
@@ -473,7 +473,7 @@ $( function() {
             $(ui.handle).text("?");
         }
         else {
-            $(ui.handle).text(m_val);
+            $(ui.handle).text("");
         }
         $( "#sliderval5" ).val( ui.value );
       }
@@ -501,7 +501,7 @@ $( function() {
               $(ui.handle).text("?");
           }
           else {
-              $(ui.handle).text(m_val);
+              $(ui.handle).text("");
           }
           $( "#sliderval6" ).val( ui.value );
         }
@@ -529,7 +529,7 @@ $( function() {
               $(ui.handle).text("?");
           }
           else {
-              $(ui.handle).text(m_val);
+              $(ui.handle).text("");
           }
           $( "#sliderval7" ).val( ui.value );
         }
@@ -557,7 +557,7 @@ $( function() {
                 $(ui.handle).text("?");
             }
             else {
-                $(ui.handle).text(m_val);
+                $(ui.handle).text("");
             }
             $( "#sliderval8" ).val( ui.value );
           }
@@ -582,7 +582,7 @@ $( function() {
         if (m_val < 0) {
             $(ui.handle).text("?");
         } else {
-            $(ui.handle).text(m_val);
+            $(ui.handle).text("");
         }
         $( "#sliderval9" ).val( ui.value );
       }
@@ -607,7 +607,7 @@ $( function() {
         if (m_val < 0) {
             $(ui.handle).text("?");
         } else {
-            $(ui.handle).text(m_val);
+            $(ui.handle).text("");
         }
         $( "#sliderval10" ).val( ui.value );
       }
@@ -632,7 +632,7 @@ $( function() {
         if (m_val < 0) {
             $(ui.handle).text("?");
         } else {
-            $(ui.handle).text(m_val);
+            $(ui.handle).text("");
         }
         $( "#sliderval11" ).val( ui.value );
       }
@@ -657,7 +657,7 @@ $( function() {
         if (m_val < 0) {
             $(ui.handle).text("?");
         } else {
-            $(ui.handle).text(m_val);
+            $(ui.handle).text("");
         }
         $( "#sliderval12" ).val( ui.value );
       }
@@ -682,7 +682,7 @@ $( function() {
         if (m_val < 0) {
             $(ui.handle).text("?");
         } else {
-            $(ui.handle).text(m_val);
+            $(ui.handle).text("");
         }
         $( "#sliderval13" ).val( ui.value );
       }
