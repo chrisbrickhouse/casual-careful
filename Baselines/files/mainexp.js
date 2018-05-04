@@ -37,7 +37,7 @@ function setSliders(arr) {
     document.getElementById("Q"+qn).innerHTML = qText
     document.getElementById("Q"+qn+"L").innerHTML = qLeft
     document.getElementById("Q"+qn+"R").innerHTML = qRight
-    document.getElementById("Q"+qn+"C").innerHTML = qCent
+    document.getElementById("Q"+qn+"C").innerHTML = ""
   }
 }
 
