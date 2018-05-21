@@ -252,7 +252,7 @@ var c_order = shuffle(conditions)
 //    's_car_mix'
 //])
 // mixed condition trials always last
-var trialOrder = c_order
+var trialOrder = ['k_cas_del']
 
 var sliderOrder = [
   'educated',
@@ -275,7 +275,7 @@ setSliders(sliderOrder)//set randomizes order once, may be worth doing it for ea
 
 var data = {};
 var trialnum = 0;
-var TOTAL_TRIALS = trialOrder.length
+var TOTAL_TRIALS = trialOrder.length - 1
 // Change above to 0 if only one trial shown to participant at random
 
 data.trialOrder = trialOrder.slice() //Makes a copy rather than ref
