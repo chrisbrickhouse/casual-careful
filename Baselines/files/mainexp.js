@@ -107,7 +107,8 @@ function get_slider_data() {
     var response = $('#sliderval'+i).val();
     slidervals[i-2] = response;
   }
-  data.sliderVals.push(slidervals)
+  //data.sliderVals.push(slidervals)
+  data.sliderVals = slidervals
 }
 
 // Condition list
