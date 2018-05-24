@@ -1,0 +1,645 @@
+
+<!-- saved from url=(0061)https://stanford.edu/~sunwooj/experiments/rdecexp2-mturk.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Language experiment</title>
+
+
+
+<script src="./files/jquery.min.js"></script>
+<script type="text/javascript" src="./files/mmturkey.0.5.js"></script>
+
+<script src="./files/jquery-1.12.4.js"></script>
+<script src="./files/jquery-ui.js"></script>
+
+<link rel="stylesheet" href="./files/jquery-ui.css">
+
+
+
+<style>
+
+body {
+    font-family: serif;
+    font-size: 120%;
+    color: black;
+    min-width: 980px;
+    background: #fffff2  }
+
+div {
+    background: #fffff2;
+    padding: 4px 4px 4px 4px;
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+}
+
+div div {
+    background: white;
+    padding: 4px 4px 4px 4px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    /*border-radius: 5px;*/
+}
+
+label {
+    display: block;
+}
+
+.responseText{
+    background: white;
+    padding: 4px 4px 4px 4px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px transparent;
+}
+
+.leftLabel {
+    float: left;
+    font-size: 80%;
+    font-weight: bold;
+    color: #8C1515;
+}
+
+.rightLabel {
+    float: right;
+    font-size: 80%;
+    font-weight: bold;
+    color: #8C1515;
+}
+
+.centerLabel {
+    float: center;
+    font-size: 80%;
+    font-weight: bold;
+    color: black;
+}
+
+.block-text {
+  width: 500px;
+  text-align: justify;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+.questionSent {
+    margin-left: 20px;
+    margin-right: 20px;
+    /*text-indent: 20px;*/
+    text-align: left;
+}
+
+.optional {
+    text-indent: 20px;
+    text-align: left;
+}
+
+.sliders {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        margin: 5px auto;
+    }
+
+</style></head>
+
+
+
+<!-- inline CSS style for now -->
+
+
+
+
+
+<!-- main html body -->
+
+<body style="">
+<span id="Condition" style="display: none;">k_car_schwa</span>
+<div class="slide" id="intro" style="display: block;">
+    <div>
+
+<br>
+<img src="./files/logo-cardinal.png" alt="Stanford Department of Linguistics" width="240">
+<br>
+<br>
+<p class="block-text">We invite you to participate in a research study on language production and comprehension. Your experimenter will ask you to do a linguistic task such as reading sentences or words, naming pictures or describing scenes, making up sentences of your own, or participating in a simple language game.</p>
+
+<p class="block-text">There are no risks or benefits of any kind involved in this study.</p>
+
+<p class="block-text">You will be paid for your participation at the posted rate.</p>
+
+<p class="block-text">If you have read this form and have decided to participate in this experiment, please understand your participation is voluntary and you have the right to withdraw your consent or discontinue participation at any time without penalty or loss of benefits to which you are otherwise entitled. You have the right to refuse to do particular tasks. Your individual privacy will be maintained in all published and written data resulting from the study.   You may print this form for your records.</p>
+
+<p class="block-text"><strong>CONTACT INFORMATION:</strong><br />If you have any questions, concerns or complaints about this research study, its procedures, risks and benefits, you should contact one of the Protocol Director Penelope Eckert (650)-725-1564</p>
+
+<p class="block-text">If you are not satisfied with how this study is being conducted, or if you have any concerns, complaints, or general questions about the research or your rights as a participant, please contact the Stanford Institutional Review Board (IRB) to speak to someone independent of the research team at (650)-723-2480 or toll free at 1-866-680-2906. You can also write to the Stanford IRB, Stanford University, 3000 El Camino Real, Five Palo Alto Square, 4th Floor, Palo Alto, CA 94306 USA.</p>
+
+<p class="block-text">If you agree to participate, please proceed to the study tasks.</p>
+
+
+<br><br>
+<button type="button" id="gotoInstructions">Proceed to instructions</button>
+<br><br>
+
+    </div>
+</div>
+
+
+
+
+<div class="slide" id="instructions" style="display: none;">
+    <div>
+
+<br><br>
+<p class="block-text">In this experiment, you will be listening to 1 sound file.<br />You will first be asked to listen to the audio and answer a short question.<br />
+    <br />
+    You will then be asked to rate the audio on a number of dimensions.<br />
+    <br />
+    You may play the audio as many times as you like to help in this.
+</p>
+<br><br>
+<button type="button" id="gotoCheck">Proceed to instructions</button>
+</div>
+</div>
+
+<div class="slide" id="audioCheck" style="display: none;">
+    <div>
+
+<p class="block-text"> This experiment requires you to listen to and judge audio speech:</p>
+<p class="block-text">1: <strong>Please make sure that you have a functioning headset</strong>, and please check that your speaker volume is set to a comfortable level by clicking on the sample audio file below. We will check to make sure that you have played and listened to the audio in the main experiment, as this is crucial to our experiment.</p>
+
+<p class="block-text">2: <strong>You must be a native speaker of American English to participate in this study.</strong> To proceed, please check the boxes below to ensure that you meet both requirements, and then click on the button, " Start experiment ". </p>
+
+<p class="block-text">Note: This is a perception experiment requiring undivided attention from you. Please devote your attention solely to this task. Thanks for your participation!</p>
+
+<span style="font-weight: bold; color: #8C1515;"> Test Sound </span>
+<br>
+<button type="button" onclick="document.getElementById('sampleAudio').play()">Play test sound</button>
+<audio id="sampleAudio" style="display: none;" src="http://stanford.edu/~sunwooj/experiments/dec1/stimuli/sample.wav" src="#" type="audio/wav"></audio>
+<br><br>
+<form class="questionSent">
+  <input type="checkbox" id="native" name="native" value="1"> I am a native speaker of American English. <br>
+  <input type="checkbox" id="speaker" name="speaker" value="1"> I have a functioning headphone and an audio system that can play sound files. <br>
+</form>
+
+<br><br>
+<button type="button" id="startbutton">Start experiment</button>
+<br><br>
+<p><span style="color: blue" id="checkboxWarning"></span></p>
+
+    </div>
+</div>
+
+
+
+
+<!-- Main experiment starts here -->
+<div class="slide" id="attentioncheck" style="display: none;">
+    <div>
+
+<!-- Audio stimuli displayed here -->
+<br>
+<br>
+<button type="button" id="playaudio2" onclick="playAudio;">Play audio</button>
+
+
+<!-- Q0: Verification -->
+<form id="responseForm0">
+
+<p class="questionSent">Click the button above to listen to the audio, and then type in the last word you heard.</p>
+<p><input type="text" id="verText" style="width: 400px;" value=""> </p>
+<br>
+<p class="block-text"> <strong> Make sure you type in everything before you click Next, as you cannot come back to this section. </strong>
+</p>
+
+<button type="button" id="veributton">Next</button>
+
+<!-- warning message in case of no response -->
+<p><span style="color: blue" id="veriWarning"></span></p>
+
+</form>
+</div>
+</div>
+</div>
+
+
+<div class="slide" id="sliderPage" style="display: none; border: none;">
+    <div>
+
+<!-- Audio stimuli displayed here -->
+<br>
+<br>
+<audio id="audio1" src="#" type="audio/wav" style="display: none;"></audio>
+<audio id="audio2" src="#" type="audio/wav" style="display: none;"></audio>
+<audio id="audio3" src="#" type="audio/wav" style="display: none;"></audio>
+<audio id="audio4" src="#" type="audio/wav" style="display: none;"></audio>
+<audio id="audio5" src="#" type="audio/wav" style="display: none;"></audio>
+<audio id="audio6" src="#" type="audio/wav" style="display: none;"></audio>
+<audio id="audio7" src="#" type="audio/wav" style="display: none;"></audio>
+<audio id="audio8" src="#" type="audio/wav" style="display: none;"></audio>
+<button type="button" id="playaudio" onclick="playAudio();">Play audio</button>
+
+
+<!-- Q1 got the axe, the rest keep the old numbering for the javascript -->
+<textarea id="speakerPerception" width="400px" style="display: none;"></textarea>
+
+
+<!-- Q2: Speaker certainty about p -->
+<form id="responseForm2">
+
+<p class="block-text" style="/*font-size: 80%;*/ font-weight: bold;"> For Q1-Q12, please drag or click the sliders to the left or right to reflect the ratings you have in mind (numbers will appear once you drag).
+</p>
+
+<p class="questionSent">Q1: <span id="Q2"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval2" id="sliderval2" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q2L"></span>
+</span>
+<span class="centerLabel" id = "Q2C"> Speaker femininity </span>
+<span class="rightLabel"> <span id="Q2R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+<br>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider2"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+
+<!-- Q3: speaker inference on addressee certainty about p -->
+<form id="responseForm3">
+
+<p class="questionSent">Q2: <span id="Q3"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval3" id="sliderval3" readonly="" style="border: 0; color: #f6931f; font-weight: bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q3L"></span>
+</span>
+<span class="centerLabel" id="Q3C"> Speaker education </span>
+<span class="rightLabel"> <span id="Q3R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+<br>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider3"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+
+<!-- Q4: speaker authority -->
+<form id="responseForm4">
+
+<p class="questionSent">Q3: <span id="Q4"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval4" id="sliderval4" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q4L"></span> </span>
+<span class="centerLabel" id="Q4C"> Degree of speaker authority</span>
+<span class="rightLabel"> <span id="Q4R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider4"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+
+<!-- Q5: speaker politeness -->
+<form id="responseForm5">
+
+<p class="questionSent">Q4: <span id="Q5"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval5" id="sliderval5" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q5L"></span> </span>
+<span class="centerLabel" id="Q5C"> Degree of speaker politeness </span>
+<span class="rightLabel"> <span id="Q5R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+<br>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider5"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+
+<!-- Q6: speaker authority -->
+<form id="responseForm4">
+
+<p class="questionSent">Q5: <span id="Q6"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval6" id="sliderval6" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q6L"></span> </span>
+<span class="centerLabel" id="Q6C"> Degree of speaker authority</span>
+<span class="rightLabel"> <span id="Q6R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider6"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+<!-- Q7: speaker authority -->
+<form id="responseForm4">
+
+<p class="questionSent">Q6: <span id="Q7"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval7" id="sliderval7" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q7L"></span> </span>
+<span class="centerLabel" id="Q7C"> Degree of speaker authority</span>
+<span class="rightLabel"> <span id="Q7R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider7"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+<!-- Q8: speaker authority -->
+<form id="responseForm4">
+
+<p class="questionSent">Q7: <span id="Q8"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval8" id="sliderval8" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q8L"></span> </span>
+<span class="centerLabel" id="Q8C"> Degree of speaker authority</span>
+<span class="rightLabel"> <span id="Q8R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider8"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+<!-- Q9: speaker authority -->
+<form id="responseForm4">
+
+<p class="questionSent">Q8: <span id="Q9"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval9" id="sliderval9" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q9L"></span> </span>
+<span class="centerLabel" id="Q9C"> Degree of speaker authority</span>
+<span class="rightLabel"> <span id="Q9R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider9"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+<!-- Q10: speaker authority -->
+<form id="responseForm4">
+
+<p class="questionSent">Q9: <span id="Q10"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval10" id="sliderval10" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q10L"></span> </span>
+<span class="centerLabel" id="Q10C"> Degree of speaker authority</span>
+<span class="rightLabel"> <span id="Q10R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider10"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+<!-- Q11: speaker authority -->
+<form id="responseForm4">
+
+<p class="questionSent">Q10: <span id="Q11"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval11" id="sliderval11" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q11L"></span> </span>
+<span class="centerLabel" id="Q11C"> Degree of speaker authority</span>
+<span class="rightLabel"> <span id="Q11R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider11"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+<!-- Q12: speaker authority -->
+<form id="responseForm4">
+
+<p class="questionSent">Q11: <span id="Q12"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval12" id="sliderval12" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q12L"></span> </span>
+<span class="centerLabel" id="Q12C"> Degree of speaker authority</span>
+<span class="rightLabel"> <span id="Q12R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider12"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+<!-- Q13: speaker authority -->
+<form id="responseForm4">
+
+<p class="questionSent">Q12: <span id="Q13"></span>
+
+  <input type="hidden" class="slidervals" name="sliderval13" id="sliderval13" readonly="" style="border:0; color:#f6931f; font-weight:bold;" value="50">
+</p>
+
+<p>
+<span class="leftLabel"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span id="Q13L"></span> </span>
+<span class="centerLabel" id="Q13C"> Degree of speaker authority</span>
+<span class="rightLabel"> <span id="Q13R"></span> &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
+<br>
+<span style="float: left;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(0) </span>
+<span style="float: right;"> (100) &nbsp; &nbsp; &nbsp; &nbsp; </span>
+</p>
+
+<div class="sliders ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" id="slider13"><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 50%;"></span></div>
+
+</form>
+<br>
+
+<!-- Warning message in case any of Q1-Q7 doesn't get a response -->
+<p><span style="color: blue" id="warning"></span></p>
+
+
+<button type="button" id="nextTrial">Continue</button>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Demographic information slide -->
+<div class="slide" id="language" style="display: none;">
+    <div>
+
+<p class="questionSent">
+You are done with the actual experiment. The following is a brief questionnaire about you.
+<br><br>
+Our experience with different languages, and with different dialects of English, can influence the way we speak and the way we perceive speech. Having background information on these experiences can be helpful to researchers who study language.
+<br><br>
+Therefore, although the questionnaire below is optional, we would greatly appreciate it if you could fill it out.
+</p>
+<br><br>
+
+<form id="languageForm">
+
+
+<p class="questionSent"> Do you speak any language other than English as a native speaker?
+<br>
+<input type="radio" class="res" name="age" id="20s" value="1"> Yes <br>
+<input type="radio" class="res" name="age" id="30s" value="2"> No <br>
+</p>
+<br><br>
+</form>
+
+<form id="genderForm">
+<p class="questionSent"> What is your gender?
+<br>
+<input type="radio" class="res" name="gen" id="f" value="1"> Female <br>
+<input type="radio" class="res" name="gen" id="m" value="2"> Male <br>
+<input type="radio" class="res" name="gen" id="o" value="3"> Other <br>
+</p>
+<br><br>
+</form>
+
+<form id="ageForm">
+<p class="questionSent"> What is your age?
+<br>
+<input type="radio" class="res" name="age" id="20s" value="1"> 18-29 <br>
+<input type="radio" class="res" name="age" id="30s" value="2"> 30-39 <br>
+<input type="radio" class="res" name="age" id="40s" value="3"> 40-49 <br>
+<input type="radio" class="res" name="age" id="50s" value="4"> 50-59 <br>
+<input type="radio" class="res" name="age" id="60s" value="5"> 60+ <br>
+</p>
+<br><br>
+</form>
+
+<form id="ethnicityForm">
+<p class="questionSent"> What is your ethnicity?
+<br>
+<input type="radio" class="res" name="eth" id="afa" value="1"> African American <br>
+<input type="radio" class="res" name="eth" id="asa" value="2"> Asian American <br>
+<input type="radio" class="res" name="eth" id="ca" value="3"> Caucasian <br>
+<input type="radio" class="res" name="eth" id="la" value="4"> Latina/o <br>
+<input type="radio" class="res" name="eth" id="ma" value="5"> Mixed <br>
+<input type="radio" class="res" name="eth" id="nta" value="6"> Native American <br>
+<input type="radio" class="res" name="eth" id="oa" value="7"> Other <br>
+</p>
+<br><br>
+</form>
+
+<p class="questionSent">Which area in the U.S. did you live for most of your life?
+<br>
+<input type="text" id="dialect" value="">
+</p>
+
+<p class="questionSent">Any other comments about questions above?
+<br>
+<input type="text" id="lang_com" value="">
+</p>
+
+
+
+<br><br>
+
+<button type="button" id="lgsubmit">Submit</button>
+    </div>
+</div>
+
+
+<div class="slide" id="finished" style="display: none;">
+<p>You're done with the experiment. Thanks so much for participating!</p>
+</div>
+
+<script src="./files/mainexp.js"></script>
+</body>
+</html>

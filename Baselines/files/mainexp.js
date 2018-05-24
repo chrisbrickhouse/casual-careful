@@ -72,16 +72,16 @@ function get_wordlist(cond,list) { // Still needs mixed condition added
     console.log(cond,list)
     var parts = cond.split("_");
     var file_prefix = parts[0]+"-"+parts[1]+"-";
-    var list_num
-    if (parts[0] == 's') {
-      if (list == 0) {
-        list_num = 1
-      } else {
-        list_num = 0
-      }
-    } else {
-      list_num = list
-    }
+    var list_num = list
+    // if (parts[0] == 's') {
+    //   if (list == 0) {
+    //     list_num = 1
+    //   } else {
+    //     list_num = 0
+    //   }
+    // } else {
+    //   list_num = list
+    // }
     if (parts[2] == 'del') {
       var words = del_lists[list_num]
     } else if (parts[2] == 'flap') {
@@ -90,7 +90,10 @@ function get_wordlist(cond,list) { // Still needs mixed condition added
       var words = schwa_lists[list_num]
     } else if (parts[2] == 'min') {
       var words = min_lists[list_num]
+    } else {
+      console.log(parts[2])
     }
+    console.log(parts)
     for (var i = 0; i < words.length; i++) {
       wl.push(file_prefix+words[i]+'.wav')
     }
@@ -252,7 +255,7 @@ var c_order = shuffle(conditions)
 //    's_car_mix'
 //])
 // mixed condition trials always last
-var trialOrder = ['k_cas_del']
+var trialOrder = [document.getElementById('Condition').innerHTML]
 
 var sliderOrder = [
   'educated',
@@ -303,6 +306,7 @@ $(document).ready(function() {
         document.body.scrollTop = document.documentElement.scrollTop = 0;
         var trial = trialOrder.shift();
         var wl = get_wordlist(trial,k_lists);
+        data.wordlist = wl
         setAudio(wl);
         console.log(trial,wl)
         showSlide("sliderPage");
