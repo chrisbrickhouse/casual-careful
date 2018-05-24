@@ -284,6 +284,7 @@ var TOTAL_TRIALS = trialOrder.length - 1
 data.trialOrder = trialOrder.slice() //Makes a copy rather than ref
 data.sliderOrder = sliderOrder
 data.sliderVals = []
+data.listNum = k_lists
 data.comments = []
 
 $(document).ready(function() {
