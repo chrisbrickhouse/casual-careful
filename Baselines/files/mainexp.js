@@ -98,7 +98,9 @@ function get_wordlist(cond,list) { // Still needs mixed condition added
       wl.push(file_prefix+words[i]+'.wav')
     }
     console.log(wl)
-    return(wl);
+    var s_wl = shuffle(wl)
+    console.log(s_wl)
+    return(s_wl);
 }
 
 function get_slider_data() {
@@ -334,9 +336,9 @@ $(document).ready(function() {
     $('#nextTrial').click(function(){
       // Record the data present
       get_slider_data();
-      var textbox_data = document.getElementById('speakerPerception').value;
-      data.comments.push(textbox_data)
-      document.getElementById('speakerPerception').value = "";
+      //var textbox_data = document.getElementById('speakerPerception').value;
+      //data.comments.push(textbox_data)
+      //document.getElementById('speakerPerception').value = "";
       // Check if it's the end of the experiment
       if (trialnum >= TOTAL_TRIALS) {
         // If end, go to next slide
@@ -354,6 +356,18 @@ $(document).ready(function() {
     })
 
     $('#lgsubmit').click(function(){
+      var gender = $('input[name=gen]:checked').val()
+      data.gender = gender
+      var age = $('input[name=age]:checked').val()
+      data.age = age
+      var eth = $('input[name=eth]:checked').val()
+      data.ethnicity = eth
+      var lang = $('input[name=lang]:checked').val()
+      data.language = lang
+      var region = document.getElementById("dialect").value
+      data.region = region
+      var comments = document.getElementById("lang_com").value
+      data.comments = comments
       showSlide("finished");
       setTimeout(function() { turk.submit(data)}, 1000);
     })
